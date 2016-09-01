@@ -1,0 +1,27 @@
+﻿<Properties StartupItem="Hive\Oxide.Ext.Hive.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hive\Oxide.Ext.Hive.Plugin\Hive.cs">
+    <Files>
+      <File FileName="Hive\Oxide.Ext.Hive.HiveExtension\HiveExtension.cs" Line="8" Column="39" />
+      <File FileName="Hive\Oxide.Ext.Hive.Plugin\HivePluginManager.cs" Line="2" Column="26" />
+      <File FileName="Hive\Oxide.Ext.Hive.Plugin\Hive.cs" Line="364" Column="41" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Oxide.Ext.Hive" expanded="True">
+            <Node name="Oxide.Ext.Hive" expanded="True" selected="True">
+              <Node name="Oxide.Ext.Hive.HiveExtension" expanded="True" />
+              <Node name="Oxide.Ext.Hive.Plugin" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Oxide.Ext.Hive PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

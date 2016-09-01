@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DA79E23-5B75-46AD-B100-5CD4FA5A04AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Oxide.Ext.Hive</RootNamespace>
+    <AssemblyName>Oxide.Ext.Hive</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\websocket-sharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.Networking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.Configuration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rust.Xp">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Rust.Xp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\protobuf-net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Oxide.Game.Rust">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Game.Rust.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Oxide.Ext.CSharp">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Ext.CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Oxide.Core">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Posix.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Data.Tds">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Data.Tds.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Cecil.Rocks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Microsoft.Scripting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Microsoft.Scripting.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Microsoft.Dynamic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.UnityEngine">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.System">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.SQLite">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.SQLite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.Rcon">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Rcon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.Raknet">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Raknet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.Network">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Network.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.Input">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.Console">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyAntiCheat.Server">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\EasyAntiCheat.Server.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EasyAntiCheat.Client">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\EasyAntiCheat.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Behave.Unity.Runtime">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Behave.Unity.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Behave.Unity.Assets">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Behave.Unity.Assets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-UnityScript-firstpass">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Assembly-UnityScript-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Facepunch.GoogleSheets">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.GoogleSheets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rust.Data">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Rust.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.Ext.SQLite">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Ext.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:\SteamCMD\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Oxide.Ext.Hive\HiveExtension.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugins\HiveCore.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugins\HivePluginLoader.cs" />
+    <Compile Include="Oxide.Ext.Hive\HiveInventory.cs" />
+    <Compile Include="Oxide.Ext.Hive\HiveItemContainer.cs" />
+    <Compile Include="Oxide.Ext.Hive\HiveItem.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\HiveNetPackage.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Unity\UnityWWW.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Error.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\PlayerInfo.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\BaseAnswer.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\DisposePlayer.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GiveItem.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Chat.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\PrivateChat.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\RawCommand.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Restart.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\KickPlayer.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\KillPlayer.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\BanPlayer.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GiveExp.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\ExpReset.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\UnlockItem.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\UnlockAllItems.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Heli.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\AirDrop.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Optify.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GUI.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\OxideUtils.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\GetPlayerInfo.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\GetGUI.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\BaseRequest.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\PlayerInfo.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\NoPlayer.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\SleeperList.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\DisposePlayerFailed.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\DisposePlayerResult.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\PlayerUtils.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\CSUtils.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\OxideConfiguration.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\HiveNetHandler.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\Hello.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\PlayerDeath.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Teleport.cs" />
+    <Compile Include="Oxide.Ext.Hive\HiveVars.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\SetTime.cs" />
+    <Compile Include="Oxide.Ext.Hive\GlobalVars.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.DB\PlayerPosDB.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.DB\PlayerPosition.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\Logger.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\LogLevel.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\ServerRestart.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\DeletePlayers.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GetOnlinePlayers.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\OnlinePlayers.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.DB\SQLiteDB.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GetChat.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GetLog.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\ChatLog.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\ServerLog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Oxide.Ext.Hive\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Unity\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugins\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Timers\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Utils\" />
+    <Folder Include="Oxide.Ext.Hive\Oxide.Ext.Hive.DB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Timers\OxideTimer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

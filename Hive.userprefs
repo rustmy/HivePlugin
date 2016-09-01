@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GetLog.cs">
+    <Files>
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Plugins\HiveCore.cs" Line="35" Column="21" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.DB\SQLiteDB.cs" Line="5" Column="30" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.DB\PlayerPosDB.cs" Line="12" Column="60" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Utils\LogLevel.cs" Line="7" Column="3" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Utils\Logger.cs" Line="82" Column="6" />
+      <File FileName="Hive\Oxide.Ext.Hive\HiveExtension.cs" Line="21" Column="29" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Utils\OxideUtils.cs" Line="19" Column="22" />
+      <File FileName="Hive\Oxide.Ext.Hive\GlobalVars.cs" Line="10" Column="31" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Error.cs" Line="9" Column="3" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\DisposePlayer.cs" Line="1" Column="1" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GetChat.cs" Line="20" Column="5" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\PlayerInfo.cs" Line="1" Column="1" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Plugins\HivePluginLoader.cs" Line="29" Column="1" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\GetLog.cs" Line="9" Column="45" />
+      <File FileName="Hive\Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\ChatLog.cs" Line="13" Column="3" />
+      <File FileName="Hive\Oxide.Ext.Hive\HiveInventory.cs" Line="26" Column="15" />
+      <File FileName="Hive Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
