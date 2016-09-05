@@ -23,7 +23,7 @@ namespace Oxide.Ext.Hive.Utils
 
 		public static void PrintError(string tag, string message)
 		{
-			printConsole(tag, message, ConsoleColor.Red);
+			PrintConsole(tag, message, ConsoleColor.Red);
 		}
 
 		public static void PrintWarning(string message)
@@ -33,10 +33,10 @@ namespace Oxide.Ext.Hive.Utils
 
 		public static void PrintSuccess(string tag, string message)
 		{
-			printConsole(tag, message, ConsoleColor.Green);
+			PrintConsole(tag, message, ConsoleColor.Green);
 		}
 
-		private static void printConsole(string tag, string msg, ConsoleColor col)
+		private static void PrintConsole(string tag, string msg, ConsoleColor col)
 		{
 			Interface.Oxide.ServerConsole.AddMessage("[" + tag + "] " + msg, col);
 		}

@@ -31,7 +31,7 @@ namespace Oxide.Ext.Hive.Plugins
 			Name = "Hive";
 			Version = VERSION;
 			Author = "Maverick Applications";
-			ResourceId = 888;
+			ResourceId = 0;
 			HasConfig = true;
 
 		}
