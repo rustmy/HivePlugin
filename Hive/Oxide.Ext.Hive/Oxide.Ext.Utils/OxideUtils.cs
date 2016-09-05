@@ -16,9 +16,9 @@ namespace Oxide.Ext.Hive.Utils
 		{
 		}
 
-		public static void Puts(string message)
+		public static void Puts(string tag, string message)
 		{
-			Interface.Oxide.ServerConsole.AddMessage(message, ConsoleColor.White);
+			PrintConsole(tag, message, ConsoleColor.White);
 		}
 
 		public static void PrintError(string tag, string message)
@@ -26,9 +26,9 @@ namespace Oxide.Ext.Hive.Utils
 			PrintConsole(tag, message, ConsoleColor.Red);
 		}
 
-		public static void PrintWarning(string message)
+		public static void PrintWarning(string tag, string message)
 		{
-			Interface.Oxide.ServerConsole.AddMessage(message, ConsoleColor.Yellow);
+			PrintConsole(tag, message, ConsoleColor.Red);
 		}
 
 		public static void PrintSuccess(string tag, string message)

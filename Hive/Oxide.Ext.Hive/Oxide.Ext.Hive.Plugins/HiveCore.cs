@@ -34,6 +34,7 @@ namespace Oxide.Ext.Hive.Plugins
 			ResourceId = 0;
 			HasConfig = true;
 
+
 		}
 		// Main-Method - Not relevant
 		public static void Main()
@@ -66,7 +67,7 @@ namespace Oxide.Ext.Hive.Plugins
 		[HookMethod("Init")]
 		void Init()
 		{
-			OxideUtils.Puts("Hive is initializing...");
+			OxideUtils.Puts("Hive", "Hive is initializing...");
 
 			// Loading default configuration
 			LoadDefaultConfig();
@@ -99,7 +100,7 @@ namespace Oxide.Ext.Hive.Plugins
 		{
 			if (!OxideConfiguration.exists("hive") || OxideConfiguration.isEmpty("hive"))
 			{
-				OxideUtils.PrintWarning("Loading default config. You have to configure it for your server!");
+				OxideUtils.PrintWarning("Hive", "Loading default config. You have to configure it for your server!");
 
 				OxideConfiguration.setConfigKey("hive","hive_name","My Hive Name");
 				OxideConfiguration.setConfigKey("hive", "hive_password", "My Hive Password");
@@ -236,7 +237,7 @@ namespace Oxide.Ext.Hive.Plugins
 			// Show HiveNetAnswer
 			if (GlobalVars.DEBUG)
 			{
-				OxideUtils.Puts("HiveNet sent: " + ans);
+				OxideUtils.Puts("Hive", "HiveNet sent: " + ans);
 				GlobalVars.logger.Print("HiveNet sent: " + ans, LogLevel.OP);
 			}
 
@@ -251,7 +252,7 @@ namespace Oxide.Ext.Hive.Plugins
 			// Failed answer
 			if (answer.header["Type"] == "Error")
 			{
-				OxideUtils.Puts("HiveNet didn't return a successful result: " + answer.body);
+				OxideUtils.Puts("Hive", "HiveNet didn't return a successful result: " + answer.body);
 
 			}
 
@@ -292,7 +293,7 @@ namespace Oxide.Ext.Hive.Plugins
 		[HookMethod("OnServerSave")]
 		void OnServerSave()
 		{
-			OxideUtils.PrintWarning("Hive is saving some user data...");
+			OxideUtils.PrintWarning("Hive", "Hive is saving some user data...");
 			PlayerPosDB db = PlayerPosDB.getInstance();
 
 
