@@ -6,6 +6,7 @@ using Oxide.Ext.Hive.Net.Requests;
 
 namespace Oxide.Ext.Hive.Net.Answers
 {
+	// TODO: Partial reading because file can go big
 	public class GetChat : BaseAnswer
 	{
 		public GetChat()
@@ -15,7 +16,7 @@ namespace Oxide.Ext.Hive.Net.Answers
 		public override void function(string id)
 		{
 			// Get Chat file
-			String file = Interface.Oxide.LogDirectory + Path.DirectorySeparatorChar + "Log.chat.txt";
+			string file = new DirectoryInfo(Interface.Oxide.LogDirectory).Parent.Parent.FullName + Path.DirectorySeparatorChar + "Log.Chat.txt";
 			if (!File.Exists(file))
 			{
 				File.Create(file);
@@ -23,11 +24,12 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 			// Get last 50 lines
 			string[] lines = File.ReadAllLines(file);
-			List<ChatLog.Message> log = new List<ChatLog.Message>(50);
+			List<string> log = new List<string>(50);
 
 			for (int i = lines.Length - 1, j = 0; i > 0 && j < 50; i--, j++)
 			{
-				log.Add(new ChatLog.Message("", lines[i],""));
+				// TODO: Per line parsing for playername - time
+				log.Add(lines[i]);
 			}
 
 			// Send ChatLog

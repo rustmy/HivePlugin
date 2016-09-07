@@ -92,6 +92,8 @@ namespace Oxide.Ext.Hive.Plugins
 			nethandler = HiveNetHandler.getInstance(OxideConfiguration.getConfigKey("hive","server"), Convert.ToInt32(OxideConfiguration.getConfigKey("hive","server_port")));
 			nethandler.SetOnReceive((o) => onHiveNetRequest(o));
 			nethandler.Connect();
+
+			string file = new DirectoryInfo(Interface.Oxide.LogDirectory).Parent.Parent.FullName + Path.DirectorySeparatorChar + "Log.Log.txt";
 		}
 
 
@@ -177,23 +179,6 @@ namespace Oxide.Ext.Hive.Plugins
 				}
 			}
 		}
-
-
-		// Log player chat
-		[HookMethod("OnPlayerChat")]
-		void OnPlayerChat(ConsoleSystem.Arg arg)
-		{
-			// Write Into chat file
-			String file = Interface.Oxide.LogDirectory + Path.DirectorySeparatorChar + "Log.chat.txt";
-
-			if (!File.Exists(file))
-			{
-				File.Create(file);
-			} 
-			File.AppendAllText(file, arg + "\r\n", System.Text.Encoding.UTF8);
-		}
-
-
 
 		// Send Kill noti to HiveNet
 		[HookMethod("OnEntityDeath")]

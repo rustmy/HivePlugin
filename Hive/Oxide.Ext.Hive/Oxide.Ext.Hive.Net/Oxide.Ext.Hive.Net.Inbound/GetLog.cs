@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Oxide.Ext.Hive.Net.Answers
 {
-	// TODO: Partial reading at the end of file
+	// TODO: Partial reading at the end of file because file can get really big
 	public class GetLog : BaseAnswer
 	{
 		public GetLog()
@@ -16,7 +16,7 @@ namespace Oxide.Ext.Hive.Net.Answers
 		public override void function(string id)
 		{
 
-			string file = new DirectoryInfo(Interface.Oxide.RootDirectory).Parent.FullName + Path.DirectorySeparatorChar + "Log.Log.txt";
+			string file = new DirectoryInfo(Interface.Oxide.LogDirectory).Parent.Parent.FullName + Path.DirectorySeparatorChar + "Log.Log.txt";
 
 
 			if (!File.Exists(file))
