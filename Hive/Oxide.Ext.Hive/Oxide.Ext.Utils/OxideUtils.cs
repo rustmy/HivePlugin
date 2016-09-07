@@ -38,7 +38,9 @@ namespace Oxide.Ext.Hive.Utils
 
 		private static void PrintConsole(string tag, string msg, ConsoleColor col)
 		{
+			
 			Interface.Oxide.ServerConsole.AddMessage("[" + tag + "] " + msg, col);
+
 		}
 
 		protected static Dictionary<String, String> combine(Dictionary<String, String> baseDic, Dictionary<String, String> addDic)

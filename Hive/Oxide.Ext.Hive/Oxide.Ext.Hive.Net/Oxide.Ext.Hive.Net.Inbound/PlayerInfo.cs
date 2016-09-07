@@ -45,14 +45,14 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 				if (GlobalVars.DEBUG)
 				{
-					OxideUtils.Puts("ID: " + steamid + " wurde in die Queue verschoben");
-					OxideUtils.Puts("Health: " + health);
+					OxideUtils.Puts("Hive", "ID: " + steamid + " wurde in die Queue verschoben");
+					OxideUtils.Puts("Hive", "Health: " + health);
 				}
 				Thread.Sleep(2750);
 				player.Respawn();
 
 				if (GlobalVars.DEBUG)
-					OxideUtils.Puts("ID: " + steamid + " respawned");
+					OxideUtils.Puts("Hive", "ID: " + steamid + " respawned");
 
 				// Player is dead in HiveNet answer
 				if (health <= 0.0f)

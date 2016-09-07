@@ -20,7 +20,7 @@ namespace Oxide.Ext.Hive.Config
 		public static void setConfigKey(string file, string key, string value)
 		{
 			string json = readConfig(file);
-			OxideUtils.Puts("Json sagt: " + json);
+			OxideUtils.Puts("Hive", "Json sagt: " + json);
 
 			Dictionary<string, string> conf;
 
@@ -107,13 +107,10 @@ namespace Oxide.Ext.Hive.Config
 				writer.WriteEndObject();
 			}
 
-
-			OxideUtils.Puts("Sb sieht so aus: " + sb.ToString());
-
 			// Complete file name
 			string folder = Interface.Oxide.ConfigDirectory;
 			string fileName = folder + Path.DirectorySeparatorChar + file + ".json";
-			OxideUtils.Puts(fileName);
+			OxideUtils.Puts("Hive", fileName);
 			File.WriteAllText(fileName, sb.ToString());
 		}
 		private static string readConfig(string fileName)

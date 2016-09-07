@@ -107,7 +107,7 @@ namespace Oxide.Ext.Hive.Net
 		{
 			running = true;
 
-			OxideUtils.Puts("Now listening for Hive!");
+			OxideUtils.Puts("Hive", "Now listening for Hive!");
 
 			while (running)
 			{
@@ -155,7 +155,7 @@ namespace Oxide.Ext.Hive.Net
 					catch (Exception e)
 					{
 						OxideUtils.PrintError("Hive","Error while listening to Hive");
-						OxideUtils.PrintWarning(e.StackTrace);
+						OxideUtils.PrintWarning("Hive", e.StackTrace);
 					}
 				}
 			}
@@ -197,7 +197,7 @@ namespace Oxide.Ext.Hive.Net
 		/// <param name="req">Req.</param>
 		public void SendHiveNetRequest(string req)
 		{
-			OxideUtils.Puts("Adding the following request to the queue: " + req);
+			OxideUtils.Puts("Hive", "Adding the following request to the queue: " + req);
 
 			string msg = req + EOT;
 
@@ -232,7 +232,7 @@ namespace Oxide.Ext.Hive.Net
 				catch (SocketException ex)
 				{
 					OxideUtils.PrintError("Hive","Couldn't write to HiveNet");
-					OxideUtils.PrintWarning(ex.StackTrace);
+					OxideUtils.PrintWarning("Hive", ex.StackTrace);
 				}
 				finally
 				{
