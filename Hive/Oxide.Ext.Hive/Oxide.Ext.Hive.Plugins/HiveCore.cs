@@ -8,21 +8,19 @@ using Oxide.Ext.Hive.Net;
 using Oxide.Ext.Hive.Utils;
 using Oxide.Ext.Hive.Config;
 using System.IO;
-using Oxide.Ext.Utils;
-using WebSocketSharp;
-
+using Oxide.Plugins;
+using Oxide.Core.Libraries.Covalence;
+using Oxide.Game.Rust.Libraries;
 
 namespace Oxide.Ext.Hive.Plugins
 {
 
 	class HiveCore : CSPlugin
 	{
-		public static readonly VersionNumber VERSION = new Core.VersionNumber(0, 8, 0);
-
-		// Timeout for WebRequests
+		public static readonly VersionNumber VERSION = new Core.VersionNumber(0, 8, 5);
 
 		private static JsonSerializerSettings JSONCONF;
-		private const float GUITIMEOUT = 15f;
+		private const int GUITIMEOUT = 15000;
 		private HiveNetHandler nethandler;
 
 
@@ -39,7 +37,7 @@ namespace Oxide.Ext.Hive.Plugins
 		// Main-Method - Not relevant
 		public static void Main()
 		{
-			
+
 		}
 
 
@@ -67,15 +65,21 @@ namespace Oxide.Ext.Hive.Plugins
 		[HookMethod("Init")]
 		void Init()
 		{
+
 			OxideUtils.Puts("Hive", "Hive is initializing...");
+			OxideUtils.Puts ("Hive","CLR version: " + Environment.Version);
+
+
+			// Init commands
+			Command library = Interface.GetMod().GetLibrary<Command>("Command");
+			library.AddConsoleCommand("hive.showOff", this, "OnUserGUIOff");
 
 			// Loading default configuration
 			LoadDefaultConfig();
 
-
+			// Set global vars
 			GlobalVars.DEBUG = Boolean.Parse(OxideConfiguration.getConfigKey("hive", "debug"));
 			GlobalVars.logger = new Ext.Utils.Logger(Interface.Oxide.DataDirectory + Path.DirectorySeparatorChar + "hive.log");
-
 
 			// Set JSON settings
 			JSONCONF = new JsonSerializerSettings()
@@ -83,13 +87,12 @@ namespace Oxide.Ext.Hive.Plugins
 				NullValueHandling = NullValueHandling.Ignore
 			};
 
-
 			// Init DB
 			PlayerPosDB.getInstance().Init();
 
 
 			// Init NetHandler
-			nethandler = HiveNetHandler.getInstance(OxideConfiguration.getConfigKey("hive","server"), Convert.ToInt32(OxideConfiguration.getConfigKey("hive","server_port")));
+			nethandler = HiveNetHandler.getInstance(OxideConfiguration.getConfigKey("hive", "server"), Convert.ToInt32(OxideConfiguration.getConfigKey("hive", "server_port")));
 			nethandler.SetOnReceive((o) => onHiveNetRequest(o));
 			nethandler.Connect();
 
@@ -104,9 +107,9 @@ namespace Oxide.Ext.Hive.Plugins
 			{
 				OxideUtils.PrintWarning("Hive", "Loading default config. You have to configure it for your server!");
 
-				OxideConfiguration.setConfigKey("hive","hive_name","My Hive Name");
+				OxideConfiguration.setConfigKey("hive", "hive_name", "My Hive Name");
 				OxideConfiguration.setConfigKey("hive", "hive_password", "My Hive Password");
-				OxideConfiguration.setConfigKey("hive","server","91.205.175.222");
+				OxideConfiguration.setConfigKey("hive", "server", "91.205.175.222");
 				OxideConfiguration.setConfigKey("hive", "server_port", "8035");
 				OxideConfiguration.setConfigKey("hive", "debug", "false");
 			}
@@ -138,8 +141,8 @@ namespace Oxide.Ext.Hive.Plugins
 			// GUI anzeigen
 
 
-			//if (HiveVars.GUI != null)
-			//ShowGUI(player, HiveVars.GUI);
+			if (HiveVars.GUI != null)
+				ShowGUI(player, HiveVars.GUI);
 
 
 
@@ -151,8 +154,8 @@ namespace Oxide.Ext.Hive.Plugins
 			// Apply Info if in Queue
 			if (HiveVars.playerQueue != null && HiveVars.playerQueue.ContainsKey(id))
 			{
-				
-				PlayerUtils.ApplyPlayerInfo(player,HiveVars.playerQueue[id]);
+
+				PlayerUtils.ApplyPlayerInfo(player, HiveVars.playerQueue[id]);
 
 				// Debug
 				if (GlobalVars.DEBUG)
@@ -191,9 +194,9 @@ namespace Oxide.Ext.Hive.Plugins
 
 			BasePlayer player = entity.ToPlayer();
 
-				Net.Requests.PlayerDeath req = new Net.Requests.PlayerDeath(player.userID);
-				nethandler.SendHiveNetRequest(HiveNetHandler.createHiveNetReq(req.type, req));
-			
+			Net.Requests.PlayerDeath req = new Net.Requests.PlayerDeath(player.userID);
+			nethandler.SendHiveNetRequest(HiveNetHandler.createHiveNetReq(req.type, req));
+
 		}
 
 
@@ -241,15 +244,17 @@ namespace Oxide.Ext.Hive.Plugins
 
 			}
 
-			try {
+			try
+			{
 				object o = Activator.CreateInstance(Type.GetType("Oxide.Ext.Hive.Net.Answers." + answer.header["Type"]));
 				JsonConvert.PopulateObject(answer.body, o, JSONCONF);
 				Net.Answers.BaseAnswer obj = (Net.Answers.BaseAnswer)o;
 				obj.function(answer.header["ID"]);
-			} catch (Exception ex)
+			}
+			catch (Exception ex)
 			{
 				if (GlobalVars.DEBUG)
-					OxideUtils.PrintError("Hive","HiveNet answer could not be parsed");
+					OxideUtils.PrintError("Hive", "HiveNet answer could not be parsed");
 
 				GlobalVars.logger.Print(ex.StackTrace + "\r\n" + ex.Message, LogLevel.FatalError);
 			}
@@ -263,15 +268,16 @@ namespace Oxide.Ext.Hive.Plugins
 			CuiHelper.AddUi(player, elems);
 
 			// GUI delay timer
-			//new OxideTimer().Once(GUITIMEOUT, () =>
-			//{
-			//	foreach (CuiElement c in elems)
-			//	{
-			//		CuiHelper.DestroyUi(player, c.Name);
-			//	}
-			//
-			//});
+			new TimerUtil().Once(GUITIMEOUT, (o) =>
+			{
+				foreach (CuiElement c in elems)
+				{
+					CuiHelper.DestroyUi(player, c.Name);
+				}
+
+			});
 		}
+
 
 
 		// *Oxide Event* - Called when the server saves
@@ -342,11 +348,28 @@ namespace Oxide.Ext.Hive.Plugins
 			nethandler.SendHiveNetRequest(msg);
 		}
 
+
 		// Gets a random short inside the positive short-Range
 		private short getRandomID()
 		{
 			return System.Convert.ToInt16(new System.Random().Next(0, short.MaxValue));
 		}
 
+
+		[HookMethod("OnUserGUIOff")]
+		void OnUserGUIOff(ConsoleSystem.Arg arg)
+		{
+			try
+			{
+				BasePlayer player = BasePlayer.FindByID(arg.connection.userid);
+				PlayerUtils.DestroyPlayerUI(player, HiveVars.GUI);
+			}
+			catch (NullReferenceException ex)
+			{
+				OxideUtils.Puts("Hive", "Please don't use this command manually");
+			}
+
+
+		}
 	}
 }

@@ -9,6 +9,7 @@ using Oxide.Ext.Hive.Utils;
 
 namespace Oxide.Ext.Hive.Net
 {
+	// TODO: Race condition optizmization
 	public class HiveNetHandler
 	{
 		private string server;
@@ -24,9 +25,11 @@ namespace Oxide.Ext.Hive.Net
 
 		// Pending messages to Hive
 		private Queue<byte[]> msgQueue;
-		private bool reqLock;
 
+		// Thread lock
+		private volatile bool reqLock;
 
+		private static Object locke;
 
 		private HiveNetHandler(string url, int port)
 		{
@@ -51,11 +54,11 @@ namespace Oxide.Ext.Hive.Net
 			{
 				client = new TcpClient(server, port);
 				connected = true;
-				OxideUtils.PrintSuccess("Hive","Connected to Hive Network");
+				OxideUtils.PrintSuccess("Hive", "Connected to Hive Network");
 			}
 			catch (Exception)
 			{
-				OxideUtils.PrintError("Hive","Could not connect with HiveNetwork");
+				OxideUtils.PrintError("Hive", "Could not connect with HiveNetwork");
 				connected = false;
 				client = null;
 				return;
@@ -100,6 +103,25 @@ namespace Oxide.Ext.Hive.Net
 			t.Start();
 		}
 
+
+		// 
+		public void MsgEnqueue(byte[] msg)
+		{
+			lock (msgQueue)
+			{
+				msgQueue.Enqueue(msg);
+			}
+		}
+
+
+		// 
+		public byte[] MsgDequeue()
+		{
+			lock (msgQueue)
+			{
+				return msgQueue.Dequeue();
+			}
+		}
 
 
 		// For thread use
@@ -154,7 +176,7 @@ namespace Oxide.Ext.Hive.Net
 					}
 					catch (Exception e)
 					{
-						OxideUtils.PrintError("Hive","Error while listening to Hive");
+						OxideUtils.PrintError("Hive", "Error while listening to Hive");
 						OxideUtils.PrintWarning("Hive", e.StackTrace);
 					}
 				}
@@ -173,7 +195,7 @@ namespace Oxide.Ext.Hive.Net
 			bool part2 = (client.Client.Available == 0);
 			if (part1 && part2)
 			{
-				OxideUtils.PrintError("Hive","No connection to HiveNet. Trying to reconnect...");
+				OxideUtils.PrintError("Hive", "No connection to HiveNet. Trying to reconnect...");
 
 
 				return false;
@@ -201,13 +223,17 @@ namespace Oxide.Ext.Hive.Net
 
 			string msg = req + EOT;
 
-			msgQueue.Enqueue(Encoding.UTF8.GetBytes(msg));
 
-			if (!reqLock)
-			{
-				reqLock = true;
-				new Thread(new ThreadStart(SendRequestInThread)).Start();
-			}
+			MsgEnqueue(Encoding.UTF8.GetBytes(msg));
+
+
+				if (!reqLock)
+				{
+					reqLock = true;
+					new Thread(new ThreadStart(SendRequestInThread)).Start();
+
+				}
+
 		}
 
 
@@ -223,7 +249,8 @@ namespace Oxide.Ext.Hive.Net
 					continue;
 				}
 
-				byte[] arr = msgQueue.Dequeue();
+				byte[] arr = MsgDequeue();
+
 
 				try
 				{
@@ -231,7 +258,7 @@ namespace Oxide.Ext.Hive.Net
 				}
 				catch (SocketException ex)
 				{
-					OxideUtils.PrintError("Hive","Couldn't write to HiveNet");
+					OxideUtils.PrintError("Hive", "Couldn't write to HiveNet");
 					OxideUtils.PrintWarning("Hive", ex.StackTrace);
 				}
 				finally
