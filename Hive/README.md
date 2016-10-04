@@ -1,0 +1,2 @@
+# Hive
+Client Hive Plugin

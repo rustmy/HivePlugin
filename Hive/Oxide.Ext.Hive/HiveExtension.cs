@@ -31,7 +31,7 @@ namespace Oxide.Ext.Hive.HiveExtension
 		{
 			get
 			{
-				return new VersionNumber(1, 0, 0);
+				return new VersionNumber(0, 8, 5);
 			}
 		}
 

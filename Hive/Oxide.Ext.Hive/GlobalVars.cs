@@ -12,6 +12,7 @@ namespace Oxide.Ext.Hive
 
 		public GlobalVars()
 		{
+			
 		}
 	}
 }

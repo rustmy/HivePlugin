@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Oxide.Ext.Hive.Net.Answers;
+using Oxide.Game.Rust.Cui;
 using Rust.Xp;
 
 namespace Oxide.Ext.Hive.Utils
@@ -25,6 +26,13 @@ namespace Oxide.Ext.Hive.Utils
 			return unlockedItems;
 		}
 
+		public static void DestroyPlayerUI(BasePlayer player, List<CuiElement> ui)
+		{
+			foreach (CuiElement c in ui)
+			{
+				CuiHelper.DestroyUi(player, c.Name);
+			}
+		}
 
 
 		public static void ApplyPlayerInfo(BasePlayer player, PlayerInfo info)
