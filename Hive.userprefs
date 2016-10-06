@@ -4,10 +4,13 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/GiveExp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugins/HiveCore.cs">
     <Files>
-      <File FileName="Hive/Oxide.Ext.Hive/GlobalVars.cs" Line="1" Column="1" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/GiveExp.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Utils/LockDummy.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Update.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/BanPlayer.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/HiveNetHandler.cs" Line="230" Column="12" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugins/HiveCore.cs" Line="75" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

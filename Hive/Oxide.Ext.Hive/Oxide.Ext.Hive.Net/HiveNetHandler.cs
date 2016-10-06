@@ -29,7 +29,7 @@ namespace Oxide.Ext.Hive.Net
 		// Thread lock
 		private volatile bool reqLock;
 
-		private static Object locke;
+		private static LockDummy locke;
 
 		private HiveNetHandler(string url, int port)
 		{
@@ -37,6 +37,7 @@ namespace Oxide.Ext.Hive.Net
 			this.port = port;
 			msgQueue = new Queue<byte[]>();
 			reqLock = false;
+			locke = new LockDummy();
 			EOT = Encoding.UTF8.GetString(new byte[] { 0x04 });
 		}
 
@@ -226,14 +227,12 @@ namespace Oxide.Ext.Hive.Net
 
 			MsgEnqueue(Encoding.UTF8.GetBytes(msg));
 
-
-				if (!reqLock)
-				{
+			//lock (locke) {
+				if (!reqLock) {
 					reqLock = true;
-					new Thread(new ThreadStart(SendRequestInThread)).Start();
-
+					new Thread (new ThreadStart (SendRequestInThread)).Start ();
 				}
-
+			//}
 		}
 
 

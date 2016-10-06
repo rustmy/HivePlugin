@@ -17,6 +17,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -24,6 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oxide.Core">
@@ -77,6 +79,9 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\mscorlib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +150,8 @@
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\ServerLog.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\TimerUtil.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Hello.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\LockDummy.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Update.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Oxide.Ext.Hive\" />
