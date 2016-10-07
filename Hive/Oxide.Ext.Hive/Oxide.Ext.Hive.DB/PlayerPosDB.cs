@@ -136,7 +136,7 @@ namespace Oxide.Ext.Hive
 
 
 		// Gets and removes a user in the database
-		public PlayerPosition GetUser(ulong steamid)
+		public PlayerPosition PopUser(ulong steamid)
 		{
 			if (conn == null)
 			{

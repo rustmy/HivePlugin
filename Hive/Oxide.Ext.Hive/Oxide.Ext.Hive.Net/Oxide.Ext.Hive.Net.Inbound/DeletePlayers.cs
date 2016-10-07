@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 namespace Oxide.Ext.Hive.Net.Answers
 {
+	
 	public class DeletePlayers : BaseAnswer
 	{
 		public List<ulong> steamIDs;

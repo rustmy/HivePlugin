@@ -30,42 +30,55 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\refs\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Facepunch.Network">
       <HintPath>..\refs\Facepunch.Network.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Facepunch.UnityEngine">
       <HintPath>..\refs\Facepunch.UnityEngine.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\refs\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Oxide.Core">
       <HintPath>..\refs\Oxide.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Oxide.Ext.CSharp">
       <HintPath>..\refs\Oxide.Ext.CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Oxide.Game.Rust">
       <HintPath>..\refs\Oxide.Game.Rust.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Rust.Xp">
       <HintPath>..\refs\Rust.Xp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Data">
       <HintPath>..\refs\System.Data.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System">
       <HintPath>..\refs\System.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\refs\UnityEngine.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Data.SQLite">
       <HintPath>..\refs\System.Data.SQLite.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Facepunch.Console">
       <HintPath>..\refs\Facepunch.Console.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -134,8 +147,6 @@
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Outbound\ServerLog.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\TimerUtil.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Hello.cs" />
-    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Utils\LockDummy.cs" />
-    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Update.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Oxide.Ext.Hive\" />
