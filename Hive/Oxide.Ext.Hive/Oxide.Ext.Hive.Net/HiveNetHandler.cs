@@ -108,20 +108,21 @@ namespace Oxide.Ext.Hive.Net
 		// 
 		public void MsgEnqueue(byte[] msg)
 		{
-			lock (msgQueue)
-			{
+			System.Threading.Monitor.Enter(msgQueue);
+
 				msgQueue.Enqueue(msg);
-			}
+			System.Threading.Monitor.Exit(msgQueue);
 		}
 
 
 		// 
 		public byte[] MsgDequeue()
 		{
-			lock (msgQueue)
-			{
-				return msgQueue.Dequeue();
-			}
+			
+			System.Threading.Monitor.Enter(msgQueue);
+				byte[] arr = msgQueue.Dequeue();
+			System.Threading.Monitor.Exit(msgQueue);
+			return arr;
 		}
 
 
@@ -227,12 +228,12 @@ namespace Oxide.Ext.Hive.Net
 
 			MsgEnqueue(Encoding.UTF8.GetBytes(msg));
 
-			//lock (locke) {
+			Monitor.Enter(locke);
 				if (!reqLock) {
 					reqLock = true;
 					new Thread (new ThreadStart (SendRequestInThread)).Start ();
 				}
-			//}
+			Monitor.Exit(locke);
 		}
 
 

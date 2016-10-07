@@ -17,7 +17,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <NoStdLib>true</NoStdLib>
+    <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -25,63 +25,47 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <NoStdLib>true</NoStdLib>
+    <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Oxide.Core">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Oxide.Game.Rust">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Game.Rust.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Rust.Xp">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Rust.Xp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Oxide.Ext.CSharp">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Oxide.Ext.CSharp.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\refs\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Facepunch.Network">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Network.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Facepunch.Console">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.Console.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.Data.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\refs\Facepunch.Network.dll</HintPath>
     </Reference>
     <Reference Include="Facepunch.UnityEngine">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\Facepunch.UnityEngine.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\refs\Facepunch.UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.Data.SQLite.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\refs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.Core">
+      <HintPath>..\refs\Oxide.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.Ext.CSharp">
+      <HintPath>..\refs\Oxide.Ext.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.Game.Rust">
+      <HintPath>..\refs\Oxide.Game.Rust.dll</HintPath>
+    </Reference>
+    <Reference Include="Rust.Xp">
+      <HintPath>..\refs\Rust.Xp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\refs\System.Data.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\System.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\refs\System.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>..\..\..\..\..\..\..\..\home\jackjan\.local\share\Steam\steamapps\common\rust_dedicated\RustDedicated_Data\Managed\mscorlib.dll</HintPath>
+    <Reference Include="UnityEngine">
+      <HintPath>..\refs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\refs\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Console">
+      <HintPath>..\refs\Facepunch.Console.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
