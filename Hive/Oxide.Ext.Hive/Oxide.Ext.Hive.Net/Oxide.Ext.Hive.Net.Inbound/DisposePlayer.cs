@@ -74,6 +74,7 @@ namespace Oxide.Ext.Hive.Net.Answers
 				if (p.playerSteamID == steamID)
 				{
 					p.KillMessage();
+					break;
 				}
 			}
 
