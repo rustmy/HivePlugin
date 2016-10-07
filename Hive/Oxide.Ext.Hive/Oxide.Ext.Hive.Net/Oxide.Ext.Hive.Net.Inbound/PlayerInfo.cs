@@ -40,7 +40,8 @@ namespace Oxide.Ext.Hive.Net.Answers
 				{
 					HiveVars.playerQueue = new Dictionary<ulong, PlayerInfo>();
 				}
-
+				
+				if (health >= 0.0f)
 				HiveVars.playerQueue.Add(steamid, this);
 
 				if (GlobalVars.DEBUG)
@@ -53,12 +54,6 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 				if (GlobalVars.DEBUG)
 					OxideUtils.Puts("Hive", "ID: " + steamid + " respawned");
-
-				// Player is dead in HiveNet answer
-				if (health <= 0.0f)
-				{
-					HiveVars.playerQueue.Remove(steamid);
-				}
 			}
 
 		}
