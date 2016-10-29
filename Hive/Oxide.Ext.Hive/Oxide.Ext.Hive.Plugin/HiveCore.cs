@@ -11,10 +11,10 @@ using System.IO;
 using Oxide.Game.Rust.Libraries;
 using Oxide.Ext.Hive.Net.Requests;
 
-namespace Oxide.Ext.Hive.Plugins {
+namespace Oxide.Ext.Hive.Plugin {
 
 	class HiveCore : CSPlugin {
-		public static readonly VersionNumber VERSION = new Core.VersionNumber(0, 8, 9);
+		public static readonly VersionNumber VERSION = new VersionNumber(0, 8, 9);
 
 		private static JsonSerializerSettings JSONCONF;
 		private const int GUITIMEOUT = 15000;

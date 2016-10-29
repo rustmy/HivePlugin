@@ -81,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Oxide.Ext.Hive\HiveExtension.cs" />
     <Compile Include="Oxide.Ext.Hive\HiveInventory.cs" />
     <Compile Include="Oxide.Ext.Hive\HiveItemContainer.cs" />
     <Compile Include="Oxide.Ext.Hive\HiveItem.cs" />
@@ -142,6 +141,7 @@
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\Hello.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugin\HiveCore.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugin\HivePluginLoader.cs" />
+    <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugin\HiveExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Oxide.Ext.Hive\" />

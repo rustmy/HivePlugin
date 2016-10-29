@@ -1,10 +1,8 @@
 ﻿using System;
-using Oxide.Ext.Hive.Plugins;
+using Oxide.Ext.Hive.Plugin;
 
-namespace Oxide.Ext.Hive.Net.Answers
-{
-	public class Hello : BaseAnswer
-	{
+namespace Oxide.Ext.Hive.Net.Answers {
+	public class Hello : BaseAnswer {
 		public string version;
 		public int hivecount;
 
@@ -16,8 +14,8 @@ namespace Oxide.Ext.Hive.Net.Answers
 		{
 			
 		}
-		public override void function(string id)
-		{
+
+		public override void function(string id) {
 			HiveVars.hivecount = hivecount;
 
 			HiveCore.sync_blueprints = sync_blueprints;

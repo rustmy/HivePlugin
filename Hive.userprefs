@@ -4,5 +4,15 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HivePluginLoader.cs">
+    <Files>
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveCore.cs" Line="14" Column="32" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HivePluginLoader.cs" Line="13" Column="5" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveExtension.cs" Line="5" Column="28" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/PlayerInfo.cs" Line="7" Column="28" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/DisposePlayer.cs" Line="5" Column="28" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Utils/PlayerUtils.cs" Line="7" Column="28" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Hello.cs" Line="2" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
 </Properties>

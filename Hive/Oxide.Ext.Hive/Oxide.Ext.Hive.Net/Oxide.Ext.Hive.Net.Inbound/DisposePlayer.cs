@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using Network;
 using Newtonsoft.Json;
-using Oxide.Ext.Hive.Plugins;
+using Oxide.Ext.Hive.Plugin;
 using Oxide.Ext.Hive.Utils;
 using UnityEngine;
 
-namespace Oxide.Ext.Hive.Net.Answers
-{
-	public class DisposePlayer : BaseAnswer
-	{
+namespace Oxide.Ext.Hive.Net.Answers {
+	public class DisposePlayer : BaseAnswer {
 		public ulong steamID;
 
 		public DisposePlayer()
@@ -19,15 +17,12 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 		// Disposes this player and sends his information to HiveNet
 
-		public override void function(string id)
-		{
+		public override void function(string id) {
 			
 			// Get Player
 			BasePlayer player = null;
-			foreach (BasePlayer p in BasePlayer.sleepingPlayerList)
-			{
-				if (steamID == p.userID)
-				{
+			foreach(BasePlayer p in BasePlayer.sleepingPlayerList) {
+				if(steamID == p.userID) {
 					player = p;
 					break;
 				}
@@ -35,11 +30,10 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 
 			// Player not existing
-			if (player == null)
-			{
+			if(player == null) {
 				// Send Error to HiveNet
 				Requests.DisposePlayerFailed failreq = new Requests.DisposePlayerFailed();
-				string failmsg = HiveNetHandler.createHiveNetReq(failreq.type, failreq,id);
+				string failmsg = HiveNetHandler.createHiveNetReq(failreq.type, failreq, id);
 				HiveNetHandler.getInstance().SendHiveNetRequest(failmsg);
 				return;
 			}
@@ -59,7 +53,7 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 			// Send Player Data
 			Net.Requests.DisposePlayerResult req = new Net.Requests.DisposePlayerResult(steamid, x, y, z, rotX, rotY, rotZ, serInvent, health);
-			string msg = HiveNetHandler.createHiveNetReq(req.type, req,id);
+			string msg = HiveNetHandler.createHiveNetReq(req.type, req, id);
 			HiveNetHandler.getInstance().SendHiveNetRequest(msg);
 
 
@@ -69,10 +63,8 @@ namespace Oxide.Ext.Hive.Net.Answers
 
 			// Dispose corpse
 			PlayerCorpse[] c = Resources.FindObjectsOfTypeAll<PlayerCorpse>();
-			foreach (PlayerCorpse p in c)
-			{
-				if (p.playerSteamID == steamID)
-				{
+			foreach(PlayerCorpse p in c) {
+				if(p.playerSteamID == steamID) {
 					p.KillMessage();
 					break;
 				}

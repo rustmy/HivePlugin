@@ -4,7 +4,7 @@ using System.Threading;
 using Newtonsoft.Json;
 using Oxide.Ext.Hive.Utils;
 using Rust.Xp;
-using Oxide.Ext.Hive.Plugins;
+using Oxide.Ext.Hive.Plugin;
 
 namespace Oxide.Ext.Hive.Net.Answers {
 	// Answer from GetPlayer request

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Oxide.Ext.Hive.Net.Answers;
 using Oxide.Game.Rust.Cui;
 using Rust.Xp;
-using Oxide.Ext.Hive.Plugins;
+using Oxide.Ext.Hive.Plugin;
 
 namespace Oxide.Ext.Hive.Utils {
 	public static class PlayerUtils {
