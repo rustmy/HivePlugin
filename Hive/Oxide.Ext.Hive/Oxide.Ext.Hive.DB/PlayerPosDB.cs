@@ -4,30 +4,26 @@ using System.IO;
 using Oxide.Core;
 using Oxide.Ext.Hive.Utils;
 
-namespace Oxide.Ext.Hive
-{
+namespace Oxide.Ext.Hive {
 
 	// TODO: Let it extend SQLiteDB.cs
 
 	// Player position database - TODO: Optimize with prepared
-	public class PlayerPosDB
-	{
+	public class PlayerPosDB {
 		private static string FILE = Interface.Oxide.DataDirectory + Path.DirectorySeparatorChar + "hive.sqlite";
 		private SQLiteConnection conn;
 		private static PlayerPosDB obj;
 		private bool active;
 
-		private PlayerPosDB()
+		private PlayerPosDB ()
 		{
 		}
 
 
 		// Get Singleton Instance of this DB
-		public static PlayerPosDB getInstance()
-		{
-			if (obj == null)
-			{
-				obj = new PlayerPosDB();
+		public static PlayerPosDB getInstance() {
+			if (obj == null) {
+				obj = new PlayerPosDB ();
 			}
 
 			return obj;
@@ -35,145 +31,128 @@ namespace Oxide.Ext.Hive
 
 
 		// Init the database
-		public void Init()
-		{
+		public void Init() {
 
-			if (!File.Exists(FILE))
-				Create(FILE);
+			if (!File.Exists (FILE))
+				Create (FILE);
 			else
-				Open();
+				Open ();
 			
 			active = true;
 
 		}
 
-		public void Open()
-		{
-			conn = new SQLiteConnection("Data Source=" + FILE + "; Version=3;");
-			conn.Open();
+		public void Open() {
+			conn = new SQLiteConnection ("Data Source=" + FILE + "; Version=3;");
+			conn.Open ();
 			active = true;
 		}
 
-		public void Close()
-		{
+		public void Close() {
 			active = false;
-			conn.Close();
+			conn.Close ();
 		}
 
 
-		public void ReOpen()
-		{
+		public void ReOpen() {
 			active = false;
-			conn.Close();
-			conn = new SQLiteConnection("Data Source=" + FILE + "; Version=3;");
-			conn.Open();
+			conn.Close ();
+			conn = new SQLiteConnection ("Data Source=" + FILE + "; Version=3;");
+			conn.Open ();
 			active = true;
 		}
 
 
-		// Creates the database if not existent 
-		private void Create(string path)
-		{
-			SQLiteConnection.CreateFile(path);
-			conn = new SQLiteConnection("Data Source=" + path + "; Version=3;");
-			conn.Open();
+		// Creates the database if not existent
+		private void Create(string path) {
+			SQLiteConnection.CreateFile (path);
+			conn = new SQLiteConnection ("Data Source=" + path + "; Version=3;");
+			conn.Open ();
 
 			string sql = "CREATE TABLE `players` (  `id` BIGINT NOT NULL, `x` DOUBLE NOT NULL,  `y` DOUBLE NULL, `z` DOUBLE NULL,  PRIMARY KEY (`id`));";
-			SQLiteCommand command = new SQLiteCommand(sql, conn);
-			command.ExecuteNonQuery();
+			SQLiteCommand command = new SQLiteCommand (sql, conn);
+			command.ExecuteNonQuery ();
 		}
 
 
 
 
 		// Saves a user in the database
-		public void SaveUser(ulong steamid, double x, double y, double z)
-		{
+		public void SaveUser(ulong steamid, double x, double y, double z) {
 
-			if (conn == null)
-			{
-				OxideUtils.PrintError("Hive", "Could not save player in DB because no connection");
-				if (GlobalVars.DEBUG)
-				{
+			if (conn == null) {
+				OxideUtils.PrintError ("Hive", "Could not save player in DB because no connection");
+				if (GlobalVars.DEBUG) {
 					
 				}
 				return;
 			}
 
 
-			if (active)
-			{
+			if (active) {
 				
 				string query1 = "select count(1) from `players` where `id` = '" + steamid + "';";
-				SQLiteCommand command = new SQLiteCommand(query1, conn);
+				SQLiteCommand command = new SQLiteCommand (query1, conn);
 				long result = 0;
 
-				using (SQLiteDataReader reader = command.ExecuteReader())
-				{
-					while (reader.Read())
-						result = reader.GetInt64(0);
+				using (SQLiteDataReader reader = command.ExecuteReader ()) {
+					while (reader.Read ())
+						result = reader.GetInt64 (0);
 
-					reader.Close();
+					reader.Close ();
 				}
 
 
 				string query2 = "";
-				if (result == 0)
-				{
+				if (result == 0) {
 					query2 = "INSERT INTO `players` (`id`,`x`,`y`,`z`) VALUES (" + steamid + ", " + x + ", " + y + ", " + z + ");";
-				}
-				else {
+				} else {
 					query2 = "UPDATE `players` SET `x`=" + x + ", `y`=" + y + ", `z`=" + z + " WHERE `id`=" + steamid;
 				}
 
 
-				SQLiteCommand command2 = new SQLiteCommand(query2, conn);
+				SQLiteCommand command2 = new SQLiteCommand (query2, conn);
 
-				command2.ExecuteNonQuery();
+				command2.ExecuteNonQuery ();
 
 			}
 		}
 
 
 		// Gets and removes a user in the database
-		public PlayerPosition PopUser(ulong steamid)
-		{
-			if (conn == null)
-			{
+		public PlayerPosition PopUser(ulong steamid) {
+			if (conn == null) {
 				return null;
 			}
 			
-			if (active)
-			{
+			if (active) {
 				// Get player from db
 				string sql = "select * from `players` where `id` = '" + steamid + "';";
-				SQLiteCommand command = new SQLiteCommand(sql, conn);
-				SQLiteDataReader reader = command.ExecuteReader();
+				SQLiteCommand command = new SQLiteCommand (sql, conn);
+				SQLiteDataReader reader = command.ExecuteReader ();
 
 				// No player inside database
-				if (!reader.HasRows)
-				{
-					reader.Close();
+				if (!reader.HasRows) {
+					reader.Close ();
 					return null;
 				}
 
 				// PlayerPosition object
 				PlayerPosition pos = null;
-				while (reader.Read())
-				{
-					pos = new PlayerPosition(Convert.ToUInt64(reader["id"]), Convert.ToSingle(reader["x"]), Convert.ToSingle(reader["y"]), Convert.ToSingle(reader["z"]));
+				while (reader.Read ()) {
+					pos = new PlayerPosition (Convert.ToUInt64 (reader ["id"]), Convert.ToSingle (reader ["x"]), Convert.ToSingle (reader ["y"]), Convert.ToSingle (reader ["z"]));
 
 				}
 
-				reader.Close();
+				reader.Close ();
 
 				// Delete player after get
 				string sql2 = "DELETE * from `players` where `id` = '" + steamid + "';";
-				SQLiteCommand command2 = new SQLiteCommand(sql, conn);
-				command.ExecuteNonQuery();
+				SQLiteCommand command2 = new SQLiteCommand (sql, conn);
+				command.ExecuteNonQuery ();
 
 
-			return pos;
+				return pos;
 			}
 
 			// DB not active

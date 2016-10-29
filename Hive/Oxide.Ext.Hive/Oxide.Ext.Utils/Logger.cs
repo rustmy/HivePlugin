@@ -2,10 +2,9 @@
 using System.IO;
 using Oxide.Ext.Hive;
 
-namespace Oxide.Ext.Utils
-{
-	public class Logger
-	{
+namespace Oxide.Ext.Utils {
+	
+	public class Logger {
 
 		private string file;
 		private bool active;
@@ -15,14 +14,12 @@ namespace Oxide.Ext.Utils
 		public Logger(string file)
 		{
 			this.file = file;
-			if (!File.Exists(file))
-			{
-				try{
+			if(!File.Exists(file)) {
+				try {
 					File.Create(file);
 					active = true;
 					Print("Log created!", LogLevel.OP);
-				} catch (Exception ex)
-				{
+				} catch(Exception) {
 					active = false;
 				}
 
@@ -30,41 +27,31 @@ namespace Oxide.Ext.Utils
 			}
 		}
 
-		public bool Clear()
-		{
+		public bool Clear() {
 			try {
 				File.Delete(file);
 				File.Create(file);
 				return true;
-			} catch (Exception ex)
-			{
+			} catch(Exception) {
 				return false;
 			}
-
 		}
 
 
-		public bool Print(string text, LogLevel lvl)
-		{
-			if (active)
-			{
-				try
-				{
+		public bool Print(string text, LogLevel lvl) {
+			if(active) {
+				try {
 					File.AppendAllText(this.file, "[" + DateTime.Now.ToString("dd-MM-yy hh:mm:ss") + "] [" + getLogTag(lvl) + "] " + text + "\r\n");
 					return true;
-				}
-				catch (Exception ex)
-				{
+				} catch(Exception) {
 					return false;
-			}
+				}
 			}
 			return false;
 		}
 
-		private string getLogTag(LogLevel lvl)
-		{
-			switch (lvl)
-			{
+		private string getLogTag(LogLevel lvl) {
+			switch(lvl) {
 				case LogLevel.OP:
 					return "Operation";
 					break;

@@ -14,7 +14,6 @@ namespace Oxide.Ext.Hive
 		public static List<CuiElement> GUI;
 		public static int hivecount;
 
-
 		public HiveVars()
 		{
 		}
