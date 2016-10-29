@@ -10,6 +10,7 @@ using Oxide.Ext.Hive.Config;
 using System.IO;
 using Oxide.Game.Rust.Libraries;
 using Oxide.Ext.Hive.Net.Requests;
+using Oxide.Ext.Hive.Net.Inbound;
 
 namespace Oxide.Ext.Hive.Plugin {
 
@@ -185,7 +186,7 @@ namespace Oxide.Ext.Hive.Plugin {
 
 			BasePlayer player = entity.ToPlayer();
 
-			PlayerDeath req = new Net.Requests.PlayerDeath(player.userID);
+			Net.Requests.PlayerDeath req = new Net.Requests.PlayerDeath(player.userID);
 			nethandler.SendHiveNetRequest(HiveNetHandler.createHiveNetReq(req.type, req));
 
 		}
@@ -290,9 +291,9 @@ namespace Oxide.Ext.Hive.Plugin {
 			}
 
 			try {
-				object o = Activator.CreateInstance(Type.GetType("Oxide.Ext.Hive.Net.Answers." + answer.header["Type"]));
+				object o = Activator.CreateInstance(Type.GetType("Oxide.Ext.Hive.Net.Inbound." + answer.header["Type"]));
 				JsonConvert.PopulateObject(answer.body, o, JSONCONF);
-				Net.Answers.BaseAnswer obj = (Net.Answers.BaseAnswer)o;
+				BaseAnswer obj = (BaseAnswer)o;
 				obj.function(answer.header["ID"]);
 			} catch(Exception ex) {
 				if(GlobalVars.DEBUG)

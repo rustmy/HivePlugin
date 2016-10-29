@@ -1,7 +1,7 @@
 ﻿using System;
 using Oxide.Ext.Hive.Plugin;
 
-namespace Oxide.Ext.Hive.Net.Answers {
+namespace Oxide.Ext.Hive.Net.Inbound {
 	public class Hello : BaseAnswer {
 		public string version;
 		public int hivecount;

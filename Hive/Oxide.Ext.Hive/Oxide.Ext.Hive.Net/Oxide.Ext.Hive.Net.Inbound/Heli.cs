@@ -2,7 +2,7 @@
 using Oxide.Ext.Hive.Utils;
 using UnityEngine;
 
-namespace Oxide.Ext.Hive.Net.Answers {
+namespace Oxide.Ext.Hive.Net.Inbound {
 	public class Heli : BaseAnswer {
 		public override void function(string id) {
 			

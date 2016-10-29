@@ -1,18 +1,15 @@
 ﻿using System;
 using Rust.Xp;
 
-namespace Oxide.Ext.Hive.Net.Answers
-{
-	public class GiveExp : BaseAnswer
-	{
+namespace Oxide.Ext.Hive.Net.Inbound {
+	public class GiveExp : BaseAnswer {
 		public string player;
 		public int multiplier;
 
-		public override void function(string id)
-		{
+		public override void function(string id) {
 			BasePlayer play = BasePlayer.Find(player);
 
-			if (play != null)
+			if(play != null)
 				play.xp.Add(Definitions.Cheat, multiplier);
 		}
 	}

@@ -1,8 +1,7 @@
 ﻿using System;
-namespace Oxide.Ext.Hive.Net.Answers
-{
-	public abstract class BaseAnswer
-	{
+
+namespace Oxide.Ext.Hive.Net.Inbound {
+	public abstract class BaseAnswer {
 		
 		public BaseAnswer()
 		{

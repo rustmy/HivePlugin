@@ -6,7 +6,7 @@ using Oxide.Ext.Hive.Utils;
 using Rust.Xp;
 using Oxide.Ext.Hive.Plugin;
 
-namespace Oxide.Ext.Hive.Net.Answers {
+namespace Oxide.Ext.Hive.Net.Inbound {
 	// Answer from GetPlayer request
 	public class PlayerInfo : BaseAnswer {
 		public ulong steamid;

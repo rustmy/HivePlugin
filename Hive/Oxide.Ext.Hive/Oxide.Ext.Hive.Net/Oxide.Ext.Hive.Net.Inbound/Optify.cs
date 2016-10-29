@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oxide.Ext.Hive.Net.Answers {
+namespace Oxide.Ext.Hive.Net.Inbound {
 	public class Optify : BaseAnswer {
 		bool enabled;
 

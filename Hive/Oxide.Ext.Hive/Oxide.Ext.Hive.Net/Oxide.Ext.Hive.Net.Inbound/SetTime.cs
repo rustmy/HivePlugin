@@ -1,8 +1,7 @@
 ﻿using System;
-namespace Oxide.Ext.Hive.Net.Answers
-{
-	public class SetTime: BaseAnswer
-	{
+
+namespace Oxide.Ext.Hive.Net.Inbound {
+	public class SetTime: BaseAnswer {
 		// (0-24)
 		public byte time;
 
@@ -10,8 +9,7 @@ namespace Oxide.Ext.Hive.Net.Answers
 		{
 		}
 
-		public override void function(string id)
-		{
+		public override void function(string id) {
 			
 		}
 	}
