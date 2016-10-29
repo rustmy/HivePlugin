@@ -1,0 +1,5 @@
+/media/jackjan/Externe/Dev/GitHub/HivePlugin/Hive/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/media/jackjan/Externe/Dev/GitHub/HivePlugin/Hive/bin/Debug/Oxide.Ext.Hive.dll.mdb
+/media/jackjan/Externe/Dev/GitHub/HivePlugin/Hive/bin/Debug/Oxide.Ext.Hive.dll
+/media/jackjan/Externe/Dev/GitHub/HivePlugin/Hive/obj/Debug/Oxide.Ext.Hive.dll
+/media/jackjan/Externe/Dev/GitHub/HivePlugin/Hive/obj/Debug/Oxide.Ext.Hive.dll.mdb

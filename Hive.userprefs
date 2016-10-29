@@ -1,18 +1,25 @@
 ﻿<Properties RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HivePluginLoader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/ResetPlayer.cs">
     <Files>
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveCore.cs" Line="14" Column="32" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HivePluginLoader.cs" Line="13" Column="5" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveExtension.cs" Line="5" Column="28" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/PlayerInfo.cs" Line="7" Column="28" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/DisposePlayer.cs" Line="5" Column="28" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Utils/PlayerUtils.cs" Line="7" Column="28" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Hello.cs" Line="2" Column="28" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HivePluginLoader.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveExtension.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/PlayerInfo.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/DisposePlayer.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Utils/PlayerUtils.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Hello.cs" Line="19" Column="25" />
+      <File FileName="Hive/Oxide.Ext.Hive/HiveVars.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/KillPlayer.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/ResetPlayer.cs" Line="11" Column="4" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/BaseAnswer.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.DB/PlayerPosDB.cs" Line="147" Column="21" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Optify.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Heli.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Restart.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>
