@@ -3,12 +3,19 @@ using Oxide.Ext.Hive.Plugin;
 
 namespace Oxide.Ext.Hive.Net.Inbound {
 	public class Hello : BaseAnswer {
+		
 		public string version;
 		public int hivecount;
 
 		public bool sync_exp;
 		public bool sync_inventory;
 		public bool sync_blueprints;
+
+		// Scheduled Commands
+		public ScheduledCommand[] schedCommands;
+
+		// Enables/Disables the Splash Screen GUI on this Server
+		public bool showGUI;
 
 		public Hello()
 		{

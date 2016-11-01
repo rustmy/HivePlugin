@@ -4,12 +4,16 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveCore.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hive/Oxide.Ext.Hive/ScheduledCommand.cs">
     <Files>
       <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Utils/PlayerUtils.cs" Line="1" Column="1" />
       <File FileName="Hive/Oxide.Ext.Hive/HiveVars.cs" Line="1" Column="1" />
       <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/PlayerInfo.cs" Line="1" Column="1" />
-      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveCore.cs" Line="294" Column="81" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Plugin/HiveCore.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/ResetPlayer.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.DB/PlayerPosDB.cs" Line="1" Column="1" />
+      <File FileName="Hive/Oxide.Ext.Hive/Oxide.Ext.Hive.Net/Oxide.Ext.Hive.Net.Inbound/Hello.cs" Line="12" Column="31" />
+      <File FileName="Hive/Oxide.Ext.Hive/ScheduledCommand.cs" Line="6" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

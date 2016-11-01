@@ -143,6 +143,7 @@
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugin\HivePluginLoader.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Plugin\HiveExtension.cs" />
     <Compile Include="Oxide.Ext.Hive\Oxide.Ext.Hive.Net\Oxide.Ext.Hive.Net.Inbound\ResetPlayer.cs" />
+    <Compile Include="Oxide.Ext.Hive\ScheduledCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Oxide.Ext.Hive\" />
